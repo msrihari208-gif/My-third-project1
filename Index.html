@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurelia Global University — Admissions Open 2026–2027</title>
+
+  <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans (Sans-Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy-deep: #0B1F3A;
+      --navy-mid: #132C4E;
+      --royal-blue: #1E40AF;
+      --gold-primary: #D97706;
+      --gold-bright: #F59E0B;
+      --gold-soft: #FEF3C7;
+      --slate-bg: #F8FAFC;
+      --surface-white: #FFFFFF;
+      --text-dark: #0F172A;
+      --text-muted: #475569;
+      --border-subtle: #E2E8F0;
+      --transition-base: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 82px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-dark);
+      background-color: var(--surface-white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* Color & Gradient Helpers */
+    .bg-navy { background-color: var(--navy-deep) !important; }
+    .bg-navy-mid { background-color: var(--navy-mid) !important; }
+    .bg-slate { background-color: var(--slate-bg) !important; }
+    .text-navy { color: var(--navy-deep) !important; }
+    .text-royal { color: var(--royal-blue) !important; }
+    .text-gold { color: var(--gold-bright) !important; }
+    .text-gold-dark { color: var(--gold-primary) !important; }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-primary) 100%);
+      color: #FFFFFF;
+      border: none;
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 0.65rem 1.4rem;
+      box-shadow: 0 6px 18px rgba(217, 119, 6, 0.3);
+      transition: var(--transition-base);
+    }
+    .btn-gold:hover {
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(217, 119, 6, 0.42);
+    }
+
+    .btn-navy {
+      background-color: var(--navy-deep);
+      color: #FFFFFF;
+      border: 1px solid var(--navy-deep);
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 0.65rem 1.4rem;
+      transition: var(--transition-base);
+    }
+    .btn-navy:hover {
+      background-color: var(--royal-blue);
+      border-color: var(--royal-blue);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    /* Top Announcement Ticker Bar */
+    .top-announcement-bar {
+      background: linear-gradient(90deg, #071426 0%, var(--navy-deep) 50%, #071426 100%);
+      color: #E2E8F0;
+      font-size: 0.82rem;
+      border-bottom: 1px solid rgba(245, 158, 11, 0.25);
+    }
+
+    /* Sticky Glassmorphic Navbar */
+    .navbar-university {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 20px rgba(11, 31, 58, 0.05);
+      padding: 0.65rem 0;
+    }
+
+    .crest-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--royal-blue) 100%);
+      border: 2px solid var(--gold-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-bright);
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(11, 31, 58, 0.2);
+    }
+
+    .navbar-university .nav-link {
+      color: var(--navy-deep);
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 0.5rem 0.72rem !important;
+      border-radius: 8px;
+      transition: var(--transition-base);
+    }
+    .navbar-university .nav-link:hover,
+    .navbar-university .nav-link.active {
+      color: var(--gold-primary);
+      background-color: rgba(245, 158, 11, 0.08);
+    }
+
+    /* Hero Banner */
+    .hero-section {
+      position: relative;
+      background:
+        linear-gradient(115deg, rgba(11, 31, 58, 0.92) 0%, rgba(11, 31, 58, 0.80) 55%, rgba(30, 64, 175, 0.72) 100%),
+        url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: #FFFFFF;
+      padding: 5.5rem 0 4.5rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(245, 158, 11, 0.16);
+      border: 1px solid rgba(245, 158, 11, 0.55);
+      color: #FCD34D;
+      padding: 0.45rem 1.05rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero-glass-card {
+      background: rgba(255, 255, 255, 0.09);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 20px;
+      padding: 1.75rem;
+    }
+
+    .stats-strip {
+      background: var(--navy-deep);
+      border-top: 2px solid var(--gold-bright);
+      color: #FFFFFF;
+    }
+
+    /* Section Headers */
+    .section-kicker {
+      display: inline-block;
+      color: var(--gold-primary);
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-divider {
+      width: 64px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold-bright), var(--royal-blue));
+      border-radius: 999px;
+      margin-top: 0.75rem;
+    }
+
+    /* Course Cards */
+    .course-card {
+      background: var(--surface-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: var(--transition-base);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    }
+    .course-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold-bright);
+      box-shadow: 0 18px 34px -10px rgba(11, 31, 58, 0.14);
+    }
+
+    .course-card-top {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+      color: #FFFFFF;
+      padding: 1.25rem 1.4rem;
+      position: relative;
+    }
+
+    .course-filter-btn {
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.48rem 1.1rem;
+      border: 1px solid var(--border-subtle);
+      background: #FFFFFF;
+      color: var(--navy-deep);
+      transition: var(--transition-base);
+    }
+    .course-filter-btn:hover,
+    .course-filter-btn.active {
+      background: var(--navy-deep);
+      color: #FFFFFF;
+      border-color: var(--navy-deep);
+    }
+
+    /* Eligibility Cards */
+    .elig-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-top: 4px solid var(--navy-deep);
+      border-radius: 16px;
+      padding: 1.5rem;
+      height: 100%;
+      transition: var(--transition-base);
+    }
+    .elig-card.gold-accent {
+      border-top-color: var(--gold-bright);
+    }
+    .elig-card:hover {
+      box-shadow: 0 12px 26px rgba(11, 31, 58, 0.08);
+    }
+
+    /* Fee Structure Table */
+    .fee-table-wrapper {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 8px 26px rgba(11, 31, 58, 0.06);
+      background: #FFFFFF;
+    }
+    .fee-table thead th {
+      background: var(--navy-deep);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 1rem 1.1rem;
+      border: none;
+      white-space: nowrap;
+    }
+    .fee-table tbody td {
+      padding: 0.95rem 1.1rem;
+      vertical-align: middle;
+      border-color: #F1F5F9;
+    }
+    .fee-table tbody tr:hover {
+      background-color: #FFFBEB;
+    }
+
+    /* 8-Step Admission Process */
+    .step-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 1.4rem;
+      height: 100%;
+      position: relative;
+      transition: var(--transition-base);
+    }
+    .step-card:hover {
+      border-color: var(--gold-bright);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(11, 31, 58, 0.08);
+    }
+    .step-number-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--navy-deep), var(--royal-blue));
+      color: var(--gold-bright);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      box-shadow: 0 6px 14px rgba(11, 31, 58, 0.2);
+    }
+
+    /* Important Dates Calendar Cards */
+    .date-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-left: 5px solid var(--gold-bright);
+      border-radius: 14px;
+      padding: 1.25rem;
+      height: 100%;
+      transition: var(--transition-base);
+    }
+    .date-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(11, 31, 58, 0.08);
+    }
+
+    /* Application Form Container */
+    .application-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: 22px;
+      box-shadow: 0 18px 45px rgba(11, 31, 58, 0.09);
+      overflow: hidden;
+    }
+    .form-section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #F1F5F9;
+      margin-bottom: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .form-control, .form-select {
+      border-radius: 10px;
+      padding: 0.62rem 0.9rem;
+      border-color: #CBD5E1;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--royal-blue);
+      box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.12);
+    }
+
+    /* FAQ Accordion */
+    .accordion-university .accordion-item {
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px !important;
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+    .accordion-university .accordion-button {
+      font-weight: 700;
+      color: var(--navy-deep);
+      background-color: #FFFFFF;
+      padding: 1.1rem 1.35rem;
+      box-shadow: none;
+    }
+    .accordion-university .accordion-button:not(.collapsed) {
+      background-color: #FFFBEB;
+      color: var(--navy-deep);
+      border-bottom: 1px solid #FDE68A;
+    }
+
+    /* Scroll Reveal Subtle Animation */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    .footer-university {
+      background: #071426;
+      color: #CBD5E1;
+      border-top: 3px solid var(--gold-bright);
+    }
+    .footer-university a {
+      color: #CBD5E1;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-university a:hover {
+      color: var(--gold-bright);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================= -->
+  <div class="top-announcement-bar py-2">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge bg-warning text-dark fw-bold">NEW</span>
+        <span><strong>Admissions Open for Academic Session 2026–2027</strong> &bull; Apply Early for up to 50% Merit Scholarships</span>
+      </div>
+      <div class="d-flex align-items-center gap-3 small">
+        <a href="tel:+918662490100" class="text-white text-decoration-none"><i class="bi bi-telephone-fill text-gold me-1"></i>+91 866 249 0100</a>
+        <span class="text-secondary">|</span>
+        <button class="btn btn-link btn-sm text-gold text-decoration-none p-0 fw-semibold" data-bs-toggle="modal" data-bs-target="#statusTrackerModal">
+          <i class="bi bi-search me-1"></i>Track Application Status
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       STICKY RESPONSIVE NAVBAR
+       ========================================================================= -->
+  <nav class="navbar navbar-expand-xl navbar-university sticky-top">
+    <div class="container">
+      <!-- University Crest & Brand Name -->
+      <a class="navbar-brand d-flex align-items-center gap-2.5" href="#home">
+        <div class="crest-badge">
+          <!-- Custom SVG Academic Crest -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/>
+            <path d="M8 11l4-2 4 2"/>
+            <path d="M12 9v6"/>
+          </svg>
+        </div>
+        <div class="lh-1">
+          <div class="font-serif fw-bold fs-5 text-navy">Aurelia Global</div>
+          <small class="text-gold-dark fw-bold text-uppercase" style="font-size: 0.66rem; letter-spacing: 0.14em;">University &bull; Est. 1998</small>
+        </div>
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#universityNavbar" aria-controls="universityNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="universityNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-xl-0 gap-xl-1">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#eligibility">Eligibility</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fees">Fee Structure</a></li>
+          <li class="nav-item"><a class="nav-link" href="#process">Admission Process</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dates">Important Dates</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faqs">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <a href="#apply" class="btn btn-gold btn-sm px-3 py-2">
+            <i class="bi bi-pencil-square me-1"></i> Apply Online
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       1. HERO SECTION & UNIVERSITY OVERVIEW (#home)
+       ========================================================================= -->
+  <header id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <div class="hero-pill mb-3">
+            <i class="bi bi-stars"></i> ADMISSIONS OPEN 2026–2027
+          </div>
+          <h1 class="display-4 fw-bold mb-3 lh-sm">
+            Build Your Future <span class="text-gold">With Us</span>
+          </h1>
+          <p class="lead text-light opacity-90 mb-4" style="max-width: 620px;">
+            Join <strong>Aurelia Global University</strong> — a NAAC <strong>A++</strong> accredited multidisciplinary institution empowering innovators, engineers, and business leaders through world-class research, industry mentorship, and global placements.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <a href="#apply" class="btn btn-gold btn-lg px-4">
+              Apply Now <i class="bi bi-arrow-right-short fs-5 align-middle"></i>
+            </a>
+            <a href="#courses" class="btn btn-outline-light btn-lg px-4 rounded-3 fw-semibold">
+              <i class="bi bi-mortarboard me-2"></i>Explore Courses
+            </a>
+          </div>
+          <div class="d-flex flex-wrap align-items-center gap-4 small text-light opacity-85 pt-2">
+            <span><i class="bi bi-patch-check-fill text-gold me-1"></i> UGC &amp; AICTE Approved</span>
+            <span><i class="bi bi-patch-check-fill text-gold me-1"></i> NAAC A++ Grade</span>
+            <span><i class="bi bi-patch-check-fill text-gold me-1"></i> NIRF Top 50 Ranked</span>
+          </div>
+        </div>
+
+        <!-- Right Campus Highlight Card -->
+        <div class="col-lg-5">
+          <div class="hero-glass-card">
+            <div class="position-relative rounded-4 overflow-hidden mb-3" style="height: 220px;">
+              <img
+                src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=80"
+                onerror="this.src='https://placehold.co/800x450/0B1F3A/F59E0B?text=Aurelia+Global+Campus'"
+                alt="Aurelia Global University Academic Block"
+                class="w-100 h-100 object-fit-cover"
+              />
+              <span class="position-absolute bottom-0 start-0 m-3 badge bg-navy text-gold border border-warning px-3 py-2">
+                <i class="bi bi-geo-alt-fill me-1"></i> 150-Acre Smart Green Campus
+              </span>
+            </div>
+            <h5 class="font-serif fw-bold mb-2">Why Choose Aurelia Global University?</h5>
+            <p class="small text-light opacity-85 mb-3">
+              Equipped with AI &amp; Robotics Centers of Excellence, Bloomberg Finance Labs, international exchange partnerships across 28 countries, and dedicated career incubation support.
+            </p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top border-secondary">
+              <div>
+                <div class="small text-gold fw-bold">Application Deadline</div>
+                <div class="fw-semibold small">May 30, 2026 (Phase I)</div>
+              </div>
+              <button class="btn btn-sm btn-light text-navy fw-bold rounded-3" data-bs-toggle="modal" data-bs-target="#statusTrackerModal">
+                Check Status
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Key University Stats Strip -->
+  <section class="stats-strip py-4">
+    <div class="container">
+      <div class="row g-3 text-center">
+        <div class="col-6 col-md-3 border-end border-secondary">
+          <div class="font-serif fs-2 fw-bold text-gold">25,000+</div>
+          <div class="small text-light opacity-85">Global Alumni Network</div>
+        </div>
+        <div class="col-6 col-md-3 border-end-md border-secondary">
+          <div class="font-serif fs-2 fw-bold text-gold">96.4%</div>
+          <div class="small text-light opacity-85">Placement Track Record</div>
+        </div>
+        <div class="col-6 col-md-3 border-end border-secondary">
+          <div class="font-serif fs-2 fw-bold text-gold">140+</div>
+          <div class="small text-light opacity-85">Fortune 500 Recruiters</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="font-serif fs-2 fw-bold text-gold">₹44 LPA</div>
+          <div class="small text-light opacity-85">Highest Campus Package</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brief Introduction About the University -->
+  <section class="py-5 bg-white">
+    <div class="container py-2">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-5">
+          <div class="position-relative rounded-4 overflow-hidden shadow">
+            <img
+              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80"
+              onerror="this.src='https://placehold.co/800x600/1E40AF/FFFFFF?text=Academic+Excellence'"
+              alt="Students Collaborating in Library"
+              class="w-100 object-fit-cover"
+              style="height: 340px;"
+            />
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <span class="section-kicker">About Aurelia Global University</span>
+          <h2 class="fw-bold text-navy mb-2">Shaping Tomorrow’s Innovators &amp; Ethical Leaders</h2>
+          <div class="section-divider mb-3"></div>
+          <p class="text-muted mb-3">
+            Founded in 1998, <strong>Aurelia Global University</strong> stands at the forefront of higher education in India, blending rigorous academic theory with experiential, industry-driven learning. Our choice-based credit system allows students to pursue interdisciplinary minors alongside core specializations.
+          </p>
+          <p class="text-muted mb-4">
+            With over 450 doctoral faculty members, state-of-the-art computing clusters, and funded student startup incubators, we nurture curiosity, leadership, and lifelong employability.
+          </p>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-2.5">
+                <i class="bi bi-cpu-fill fs-4 text-gold-dark"></i>
+                <div>
+                  <div class="fw-bold small text-navy">Industry 4.0 Curriculum</div>
+                  <small class="text-muted">Co-designed with tech &amp; business leaders</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-2.5">
+                <i class="bi bi-globe2 fs-4 text-royal"></i>
+                <div>
+                  <div class="fw-bold small text-navy">Global Semester Abroad</div>
+                  <small class="text-muted">Partner universities in US, UK &amp; Germany</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2. COURSES OFFERED SECTION (#courses)
+       ========================================================================= -->
+  <section id="courses" class="py-5 bg-slate">
+    <div class="container py-2">
+      <div class="text-center mx-auto mb-4" style="max-width: 680px;">
+        <span class="section-kicker">Academic Programs 2026–2027</span>
+        <h2 class="fw-bold text-navy">Courses Offered</h2>
+        <div class="section-divider mx-auto mb-3"></div>
+        <p class="text-muted">
+          Explore our career-focused Undergraduate and Postgraduate degree programs engineered for high-growth global industries.
+        </p>
+      </div>
+
+      <!-- Search & Category Filter Bar -->
+      <div class="row g-3 align-items-center justify-content-between mb-4">
+        <div class="col-lg-7 d-flex flex-wrap gap-2" id="courseFilterGroup">
+          <button class="course-filter-btn active" data-filter="all">All Programs (7)</button>
+          <button class="course-filter-btn" data-filter="UG">Undergraduate (UG)</button>
+          <button class="course-filter-btn" data-filter="PG">Postgraduate (PG)</button>
+          <button class="course-filter-btn" data-filter="Tech">Engineering &amp; IT</button>
+          <button class="course-filter-btn" data-filter="Management">Management</button>
+        </div>
+        <div class="col-lg-4">
+          <div class="input-group shadow-sm rounded-3 overflow-hidden">
+            <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-search"></i></span>
+            <input
+              type="text"
+              id="courseSearchInput"
+              class="form-control border-start-0"
+              placeholder="Search B.Tech, AI, MBA, BCA..."
+              aria-label="Search courses"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Courses Grid Container (Populated by JS) -->
+      <div id="coursesGrid" class="row g-4"></div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. ELIGIBILITY CRITERIA SECTION (#eligibility)
+       ========================================================================= -->
+  <section id="eligibility" class="py-5 bg-white">
+    <div class="container py-2">
+      <div class="text-center mx-auto mb-5" style="max-width: 680px;">
+        <span class="section-kicker">Admission Standards</span>
+        <h2 class="fw-bold text-navy">Eligibility Criteria &amp; Documentation</h2>
+        <div class="section-divider mx-auto mb-3"></div>
+        <p class="text-muted">
+          Review the minimum academic qualifications, accepted national/university entrance examinations, and required verification documents.
+        </p>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <!-- Card 1: General Educational Qualification & Minimum Marks -->
+        <div class="col-lg-4">
+          <div class="elig-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="rounded-3 bg-navy text-gold p-2.5 fs-4"><i class="bi bi-mortarboard-fill"></i></div>
+              <h5 class="fw-bold text-navy mb-0">Minimum Marks &amp; Qualification</h5>
+            </div>
+            <ul class="list-unstyled small text-muted d-flex flex-column gap-2.5 mb-0">
+              <li><i class="bi bi-check-circle-fill text-gold-dark me-2"></i><strong>B.Tech Programs:</strong> Passed 10+2 (Physics, Chemistry, Mathematics) with at least <strong>60% aggregate marks</strong> (55% for reserved categories).</li>
+              <li><i class="bi bi-check-circle-fill text-gold-dark me-2"></i><strong>BBA &amp; BCA Programs:</strong> Passed 10+2 in any stream from a recognized board with minimum <strong>50% aggregate marks</strong> (Mathematics/CS preferred for BCA).</li>
+              <li><i class="bi bi-check-circle-fill text-gold-dark me-2"></i><strong>MBA &amp; MCA Programs:</strong> Recognized Bachelor’s degree (minimum 3 years) with at least <strong>50% aggregate marks</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2: Entrance Examination Requirements -->
+        <div class="col-lg-4">
+          <div class="elig-card gold-accent">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="rounded-3 bg-warning-subtle text-gold-dark p-2.5 fs-4"><i class="bi bi-journal-check"></i></div>
+              <h5 class="fw-bold text-navy mb-0">Entrance Exam Requirements</h5>
+            </div>
+            <ul class="list-unstyled small text-muted d-flex flex-column gap-2.5 mb-0">
+              <li><i class="bi bi-award-fill text-royal me-2"></i><strong>B.Tech (CSE / AI-ML / ECE):</strong> Valid score in <strong>JEE Main</strong>, State CET, or <strong>AGU-CET 2026</strong> (University Entrance Test).</li>
+              <li><i class="bi bi-award-fill text-royal me-2"></i><strong>MBA:</strong> Valid score in <strong>CAT / MAT / XAT / CMAT / GMAT</strong> or <strong>AGU-MAT 2026</strong> followed by Group Discussion &amp; Personal Interview.</li>
+              <li><i class="bi bi-award-fill text-royal me-2"></i><strong>BBA / BCA / MCA:</strong> Merit-based evaluation of qualifying exam marks + Online Aptitude &amp; Personal Interview.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 3: Required Documents Checklist -->
+        <div class="col-lg-4">
+          <div class="elig-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="rounded-3 bg-navy text-gold p-2.5 fs-4"><i class="bi bi-folder-check"></i></div>
+              <h5 class="fw-bold text-navy mb-0">Required Documents</h5>
+            </div>
+            <ul class="list-unstyled small text-muted d-flex flex-column gap-2 mb-0">
+              <li><i class="bi bi-file-earmark-text-fill text-navy me-2"></i>Class 10th &amp; Class 12th Official Marksheets &amp; Certificates</li>
+              <li><i class="bi bi-file-earmark-text-fill text-navy me-2"></i>Bachelor’s Degree Marksheets / Provisional Certificate (for PG)</li>
+              <li><i class="bi bi-file-earmark-text-fill text-navy me-2"></i>Entrance Exam Scorecard (JEE / CAT / MAT / AGU-CET, if applicable)</li>
+              <li><i class="bi bi-file-earmark-text-fill text-navy me-2"></i>Transfer Certificate (TC) &amp; Migration Certificate</li>
+              <li><i class="bi bi-file-earmark-text-fill text-navy me-2"></i>Government Photo ID (Aadhaar Card / Passport) &amp; 4 Passport Photos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course-Specific Quick Eligibility Matrix -->
+      <div class="p-4 rounded-4 bg-slate border">
+        <h6 class="fw-bold text-navy mb-3"><i class="bi bi-info-circle-fill text-gold-dark me-2"></i>Course-Specific Eligibility Highlights</h6>
+        <div class="row g-3 small">
+          <div class="col-md-4">
+            <div class="p-3 bg-white rounded-3 border h-100">
+              <div class="fw-bold text-navy">B.Tech (CSE, AI &amp; ML, ECE)</div>
+              <div class="text-muted mt-1">Mandatory Physics &amp; Mathematics in 10+2 along with Chemistry / Computer Science / Electronics.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-white rounded-3 border h-100">
+              <div class="fw-bold text-navy">MCA (Master of Computer Applications)</div>
+              <div class="text-muted mt-1">BCA / B.Sc. (CS/IT) or any graduate with Mathematics at 10+2 or graduation level (bridge course available).</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-white rounded-3 border h-100">
+              <div class="fw-bold text-navy">BBA &amp; MBA Management</div>
+              <div class="text-muted mt-1">Open to students from Science, Commerce, and Humanities backgrounds with strong analytical &amp; communication skills.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. FEE DETAILS SECTION (#fees)
+       ========================================================================= -->
+  <section id="fees" class="py-5 bg-slate">
+    <div class="container py-2">
+      <div class="text-center mx-auto mb-5" style="max-width: 680px;">
+        <span class="section-kicker">Transparent Fee Structure</span>
+        <h2 class="fw-bold text-navy">Annual Fee Details (2026–2027)</h2>
+        <div class="section-divider mx-auto mb-3"></div>
+        <p class="text-muted">
+          Comprehensive breakdown of academic tuition, one-time admission fee, examination fee, and campus facility charges (in INR ₹).
+        </p>
+      </div>
+
+      <div class="fee-table-wrapper">
+        <div class="table-responsive">
+          <table class="table fee-table mb-0">
+            <thead>
+              <tr>
+                <th>Course Name</th>
+                <th class="text-end">Tuition Fees</th>
+                <th class="text-end">Admission Fees*</th>
+                <th class="text-end">Examination Fees</th>
+                <th class="text-end">Other Charges</th>
+                <th class="text-end text-gold">Total Annual Fees</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="fw-bold text-navy">B.Tech – Computer Science Engineering</div>
+                  <small class="text-muted">4 Years &bull; 8 Semesters</small>
+                </td>
+                <td class="text-end">₹1,65,000</td>
+                <td class="text-end">₹15,000</td>
+                <td class="text-end">₹8,000</td>
+                <td class="text-end">₹12,000</td>
+                <td class="text-end fw-bold text-navy fs-6">₹2,00,000</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="fw-bold text-navy">B.Tech – Artificial Intelligence &amp; Machine Learning</div>
+                  <small class="text-muted">4 Years &bull; 8 Semesters</small>
+                </td>
+                <td class="text-end">₹1,75,000</td>
+                <td class="text-end">₹15,000</td>
+                <td class="text-end">₹8,000</td>
+                <td class="text-end">₹12,000</td>
+                <td class="text-end fw-bold text-navy fs-6">₹2,10,000</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="fw-bold text-navy">B.Tech – Electronics &amp; Communication Engineering</div>
+                  <small class="text-muted">4 Years &bull; 8 Semesters</small>
+                </td>
+                <td class="text-end">₹1,50,000</td>
+                <td class="text-end">₹15,000</td>
+                <td class="text-end">₹8,000</td>
+                <td class="text-end">₹12,000</td>
+                <td class="text-end fw-bold text-navy fs-6">₹1,85,000</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="fw-bold text-navy">BBA – Bachelor of Business Administration</div>
+                  <small class="text-muted">3 Years &bull; 6 Semesters</small>
+                </td>
+                <td class="text-end">₹85,000</td>
+                <td class="text-end">₹10,000</td>
+                <td class="text-end">₹6,000</td>
+                <td class="text-end">₹9,000</td>
+                <td class="text-end fw-bold text-navy fs-6">₹1,10,000</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="fw-bold text-navy">MBA – Master of Business Administration</div>
+                  <small class="text-muted">2 Years &bull; 4 Semesters</small>
+                </td>
+                <td class="text-end">₹1,80,000</td>
+                <td class="text-end">₹15,000</td>
+                <td class="text-end">₹8,000</td>
+                <td class="text-end">₹12,000</td>
+                <td class="text-end fw-bold text-navy fs-6">₹2,15,000</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="fw-bold text-navy">BCA – Bachelor of Computer Applications</div>
+                  <small class="text-muted">3 Years &bull; 6 Semesters</small>
+                </td>
+                <td class="text-end">₹80,000</td>
+                <td class="text-end">₹10,000</td>
+                <td class="text-end">₹6,000</td>
+                <td class="text-end">₹9,000</td>
+                <td class="text-end fw-bold text-navy fs-6">₹1,05,000</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="fw-bold text-navy">MCA – Master of Computer Applications</div>
+                  <small class="text-muted">2 Years &bull; 4 Semesters</small>
+                </td>
+                <td class="text-end">₹1,15,000</td>
+                <td class="text-end">₹12,000</td>
+                <td class="text-end">₹7,000</td>
+                <td class="text-end">₹11,000</td>
+                <td class="text-end fw-bold text-navy fs-6">₹1,45,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap justify-content-between align-items-center mt-3 small text-muted gap-2">
+        <span>*Admission Fees are payable once at the time of initial enrollment. Other Charges include Digital Library, High-Speed Wi-Fi, Lab &amp; Sports Complex access.</span>
+        <span class="badge bg-warning-subtle text-dark border border-warning px-3 py-2">
+          <i class="bi bi-trophy-fill text-gold-dark me-1"></i> Up to 50% Merit Scholarship available for 90%+ scorers
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. ADMISSION PROCESS (8-STEP ROADMAP) (#process)
+       ========================================================================= -->
+  <section id="process" class="py-5 bg-white">
+    <div class="container py-2">
+      <div class="text-center mx-auto mb-5" style="max-width: 680px;">
+        <span class="section-kicker">How to Enroll</span>
+        <h2 class="fw-bold text-navy">Step-by-Step Admission Process</h2>
+        <div class="section-divider mx-auto mb-3"></div>
+        <p class="text-muted">
+          Follow our streamlined 8-step digital admission workflow to secure your seat for the 2026–2027 academic session.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <div class="step-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="step-number-badge">01</div>
+              <i class="bi bi-globe fs-4 text-gold-dark"></i>
+            </div>
+            <h6 class="fw-bold text-navy">Visit University Website</h6>
+            <p class="small text-muted mb-0">Access the official Aurelia Global University Admissions Portal for 2026–2027 guidelines.</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="step-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="step-number-badge">02</div>
+              <i class="bi bi-journal-bookmark fs-4 text-gold-dark"></i>
+            </div>
+            <h6 class="fw-bold text-navy">Select Preferred Course</h6>
+            <p class="small text-muted mb-0">Explore UG &amp; PG programs and choose the specialization aligned with your career goals.</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="step-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="step-number-badge">03</div>
+              <i class="bi bi-clipboard2-check fs-4 text-gold-dark"></i>
+            </div>
+            <h6 class="fw-bold text-navy">Check Eligibility Criteria</h6>
+            <p class="small text-muted mb-0">Verify minimum qualifying marks, subject prerequisites, and entrance score requirements.</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="step-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="step-number-badge">04</div>
+              <i class="bi bi-ui-checks fs-4 text-gold-dark"></i>
+            </div>
+            <h6 class="fw-bold text-navy">Fill Online Application</h6>
+            <p class="small text-muted mb-0">Complete the online registration form with accurate personal, contact, and academic details.</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="step-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="step-number-badge">05</div>
+              <i class="bi bi-cloud-arrow-up fs-4 text-gold-dark"></i>
+            </div>
+            <h6 class="fw-bold text-navy">Upload Required Documents</h6>
+            <p class="small text-muted mb-0">Attach scanned copies of your 10th/12th marksheets, ID proof, and entrance scorecards.</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="step-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="step-number-badge">06</div>
+              <i class="bi bi-shield-check fs-4 text-gold-dark"></i>
+            </div>
+            <h6 class="fw-bold text-navy">Pay Application Fee</h6>
+            <p class="small text-muted mb-0">Complete the ₹1,000 registration fee payment via our 256-bit encrypted payment gateway.</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="step-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="step-number-badge">07</div>
+              <i class="bi bi-send-check fs-4 text-gold-dark"></i>
+            </div>
+            <h6 class="fw-bold text-navy">Submit the Application</h6>
+            <p class="small text-muted mb-0">Review your entered details, submit your application, and download your unique Application ID.</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="step-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="step-number-badge">08</div>
+              <i class="bi bi-envelope-paper-heart fs-4 text-gold-dark"></i>
+            </div>
+            <h6 class="fw-bold text-navy">Admission Confirmation</h6>
+            <p class="small text-muted mb-0">Receive your Provisional Offer Letter after merit screening/counselling and confirm your seat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. IMPORTANT DATES SECTION (#dates)
+       ========================================================================= -->
+  <section id="dates" class="py-5 bg-slate">
+    <div class="container py-2">
+      <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-3">
+        <div>
+          <span class="section-kicker">Admission Calendar 2026–2027</span>
+          <h2 class="fw-bold text-navy mb-0">Important Dates &amp; Schedule</h2>
+          <div class="section-divider"></div>
+        </div>
+        <span class="badge bg-navy text-gold border border-warning px-3 py-2 rounded-pill">
+          <i class="bi bi-info-circle me-1"></i> Note: Sample illustrative dates for 2026–2027 admission cycle
+        </span>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="date-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-success-subtle text-success">Phase I Live</span>
+              <i class="bi bi-calendar-check text-gold-dark fs-5"></i>
+            </div>
+            <div class="small text-muted fw-semibold">Application Start Date</div>
+            <h5 class="fw-bold text-navy mb-1">January 15, 2026</h5>
+            <p class="small text-muted mb-0">Online portal opens for all Undergraduate &amp; Postgraduate applications.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="date-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-warning-subtle text-warning-emphasis">Deadline</span>
+              <i class="bi bi-hourglass-split text-gold-dark fs-5"></i>
+            </div>
+            <div class="small text-muted fw-semibold">Application Last Date</div>
+            <h5 class="fw-bold text-navy mb-1">May 30, 2026</h5>
+            <p class="small text-muted mb-0">Final date for submitting online forms and uploading academic documents.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="date-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-primary-subtle text-primary">Entrance Test</span>
+              <i class="bi bi-pencil-fill text-gold-dark fs-5"></i>
+            </div>
+            <div class="small text-muted fw-semibold">Entrance Examination Date</div>
+            <h5 class="fw-bold text-navy mb-1">June 14, 2026</h5>
+            <p class="small text-muted mb-0">AGU-CET &amp; AGU-MAT conducted across 45 national centers and remote proctored mode.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="date-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-info-subtle text-info-emphasis">Results</span>
+              <i class="bi bi-list-stars text-gold-dark fs-5"></i>
+            </div>
+            <div class="small text-muted fw-semibold">Merit List Announcement</div>
+            <h5 class="fw-bold text-navy mb-1">June 28, 2026</h5>
+            <p class="small text-muted mb-0">Publication of First Merit List and Merit Scholarship allotment on the portal.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="date-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-secondary-subtle text-dark">Verification</span>
+              <i class="bi bi-people-fill text-gold-dark fs-5"></i>
+            </div>
+            <div class="small text-muted fw-semibold">Counselling Date</div>
+            <h5 class="fw-bold text-navy mb-1">July 06 – July 12, 2026</h5>
+            <p class="small text-muted mb-0">In-person &amp; virtual branch allotment, document verification, and fee submission.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="date-card" style="border-left-color: var(--royal-blue);">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-navy text-gold">Orientation</span>
+              <i class="bi bi-mortarboard-fill text-royal fs-5"></i>
+            </div>
+            <div class="small text-muted fw-semibold">Classes Commencement Date</div>
+            <h5 class="fw-bold text-navy mb-1">August 03, 2026</h5>
+            <p class="small text-muted mb-0">Freshers’ Induction Week and commencement of Fall Semester 2026–2027 lectures.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. ONLINE APPLICATION FORM SECTION (#apply)
+       ========================================================================= -->
+  <section id="apply" class="py-5 bg-white">
+    <div class="container py-2">
+      <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+        <span class="section-kicker">Start Your Journey</span>
+        <h2 class="fw-bold text-navy">Online Admission Application 2026–2027</h2>
+        <div class="section-divider mx-auto mb-3"></div>
+        <p class="text-muted">
+          Complete all required fields below to register for admission. Upon submission, you will receive an instant Application Reference Number.
+        </p>
+      </div>
+
+      <!-- Success Alert Banner (Hidden until form submission) -->
+      <div id="applicationSuccessBanner" class="alert alert-success rounded-4 p-4 mb-4 d-none shadow-sm border-success">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+          <div>
+            <h5 class="fw-bold mb-1"><i class="bi bi-check-circle-fill me-2"></i>Application Submitted Successfully!</h5>
+            <p class="mb-0 small">
+              Thank you, <strong id="bannerApplicantName">Applicant</strong>. Your application for <strong id="bannerSelectedCourse">Course</strong> has been recorded under Reference ID: <span id="bannerAppRefId" class="badge bg-navy text-gold fs-6 ms-1">AGU-2026-00000</span>.
+            </p>
+          </div>
+          <button class="btn btn-navy btn-sm" data-bs-toggle="modal" data-bs-target="#statusTrackerModal">
+            Track Application
+          </button>
+        </div>
+      </div>
+
+      <div class="application-card">
+        <div class="bg-navy text-white p-4 d-flex flex-wrap justify-content-between align-items-center gap-2">
+          <div>
+            <h4 class="font-serif fw-bold mb-1 text-gold">Aurelia Global University — Registration Portal</h4>
+            <small class="text-light opacity-85">All fields marked with <span class="text-warning">*</span> are mandatory</small>
+          </div>
+          <span class="badge bg-warning text-dark px-3 py-2 fw-bold">Session 2026–2027</span>
+        </div>
+
+        <form id="admissionApplicationForm" class="p-4 p-md-5" novalidate>
+          <!-- Group 1: Personal Details -->
+          <div class="form-section-title">
+            <i class="bi bi-person-vcard-fill text-gold-dark"></i> 1. Personal Information
+          </div>
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              <label for="appFullName" class="form-label small fw-semibold">Full Name (as per 10th Certificate) <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="appFullName" placeholder="e.g., Ananya Rao" required />
+              <div class="invalid-feedback">Please enter your full name (minimum 3 characters).</div>
+            </div>
+            <div class="col-md-3">
+              <label for="appDob" class="form-label small fw-semibold">Date of Birth <span class="text-danger">*</span></label>
+              <input type="date" class="form-control" id="appDob" max="2010-12-31" required />
+              <div class="invalid-feedback">Please select a valid date of birth.</div>
+            </div>
+            <div class="col-md-3">
+              <label for="appGender" class="form-label small fw-semibold">Gender <span class="text-danger">*</span></label>
+              <select class="form-select" id="appGender" required>
+                <option value="">Choose Gender...</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Non-Binary / Other">Non-Binary / Other</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+              <div class="invalid-feedback">Please select your gender.</div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="appEmail" class="form-label small fw-semibold">Email Address <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" id="appEmail" placeholder="applicant@example.com" required />
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="appMobile" class="form-label small fw-semibold">Mobile Number (10-digit) <span class="text-danger">*</span></label>
+              <div class="input-group">
+                <span class="input-group-text bg-light fw-semibold">+91</span>
+                <input type="tel" class="form-control" id="appMobile" placeholder="9876543210" maxlength="10" pattern="[0-9]{10}" required />
+                <div class="invalid-feedback">Please enter a valid 10-digit mobile number.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Group 2: Residential Address -->
+          <div class="form-section-title">
+            <i class="bi bi-geo-alt-fill text-gold-dark"></i> 2. Correspondence Address
+          </div>
+          <div class="row g-3 mb-4">
+            <div class="col-12">
+              <label for="appAddress" class="form-label small fw-semibold">Residential Address <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="appAddress" placeholder="House/Flat No., Street, Landmark" required />
+              <div class="invalid-feedback">Please enter your residential address.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="appState" class="form-label small fw-semibold">State / Union Territory <span class="text-danger">*</span></label>
+              <select class="form-select" id="appState" required>
+                <option value="">Select State...</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Delhi NCR">Delhi NCR</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Other Indian State">Other Indian State</option>
+              </select>
+              <div class="invalid-feedback">Please select your state.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="appCity" class="form-label small fw-semibold">City / District <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="appCity" placeholder="e.g., Vijayawada" required />
+              <div class="invalid-feedback">Please enter your city.</div>
+            </div>
+          </div>
+
+          <!-- Group 3: Academic & Course Selection -->
+          <div class="form-section-title">
+            <i class="bi bi-mortarboard-fill text-gold-dark"></i> 3. Academic Qualifications &amp; Program Choice
+          </div>
+          <div class="row g-3 mb-4">
+            <div class="col-md-4">
+              <label for="app10thMarks" class="form-label small fw-semibold">10th Class Marks (%) <span class="text-danger">*</span></label>
+              <input type="number" step="0.01" min="35" max="100" class="form-control" id="app10thMarks" placeholder="e.g., 89.5" required />
+              <div class="invalid-feedback">Enter valid percentage (35 to 100).</div>
+            </div>
+            <div class="col-md-4">
+              <label for="app12thMarks" class="form-label small fw-semibold">12th Class Marks (%) <span class="text-danger">*</span></label>
+              <input type="number" step="0.01" min="35" max="100" class="form-control" id="app12thMarks" placeholder="e.g., 86.0" required />
+              <div class="invalid-feedback">Enter valid percentage (35 to 100).</div>
+            </div>
+            <div class="col-md-4">
+              <label for="appPrevQual" class="form-label small fw-semibold">Previous Qualification <span class="text-danger">*</span></label>
+              <select class="form-select" id="appPrevQual" required>
+                <option value="">Select Qualification...</option>
+                <option value="10+2 (Science - MPC/BiPC)">10+2 (Science - MPC / BiPC)</option>
+                <option value="10+2 (Commerce / Arts)">10+2 (Commerce / Arts)</option>
+                <option value="3-Year Engineering Diploma">3-Year Engineering Diploma</option>
+                <option value="Bachelor's Degree (B.Tech / B.Sc / BCA / B.Com / BBA)">Bachelor's Degree (UG Completed / Final Year)</option>
+              </select>
+              <div class="invalid-feedback">Please select your previous qualification.</div>
+            </div>
+
+            <div class="col-md-8">
+              <label for="appCourseSelect" class="form-label small fw-semibold">Select Course Applying For <span class="text-danger">*</span></label>
+              <select class="form-select fw-semibold text-navy" id="appCourseSelect" required>
+                <option value="">-- Choose Preferred Academic Program --</option>
+                <option value="B.Tech – Computer Science Engineering">B.Tech – Computer Science Engineering (4 Years)</option>
+                <option value="B.Tech – Artificial Intelligence and Machine Learning">B.Tech – Artificial Intelligence and Machine Learning (4 Years)</option>
+                <option value="B.Tech – Electronics and Communication Engineering">B.Tech – Electronics and Communication Engineering (4 Years)</option>
+                <option value="BBA – Bachelor of Business Administration">BBA – Bachelor of Business Administration (3 Years)</option>
+                <option value="MBA – Master of Business Administration">MBA – Master of Business Administration (2 Years)</option>
+                <option value="BCA – Bachelor of Computer Applications">BCA – Bachelor of Computer Applications (3 Years)</option>
+                <option value="MCA – Master of Computer Applications">MCA – Master of Computer Applications (2 Years)</option>
+              </select>
+              <div class="invalid-feedback">Please select a course to apply.</div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="appDocuments" class="form-label small fw-semibold">Upload Documents (Marksheet/ID) <span class="text-danger">*</span></label>
+              <input type="file" class="form-control" id="appDocuments" accept=".pdf,.jpg,.jpeg,.png" multiple required />
+              <div id="uploadedFilePreview" class="form-text text-primary fw-semibold">PDF, JPG, or PNG (Max 5MB)</div>
+              <div class="invalid-feedback">Please attach at least one supporting document.</div>
+            </div>
+          </div>
+
+          <!-- Declaration & Submit -->
+          <div class="p-3 rounded-3 bg-slate border mb-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="appDeclaration" required />
+              <label class="form-check-label small text-muted" for="appDeclaration">
+                I hereby declare that all information furnished in this online admission application is true and accurate to the best of my knowledge. I agree to abide by the admission rules of <strong>Aurelia Global University</strong>.
+              </label>
+              <div class="invalid-feedback">You must accept the declaration before submitting.</div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+            <button type="reset" class="btn btn-outline-secondary rounded-3 px-4" onclick="resetApplicationForm()">
+              Clear Form
+            </button>
+            <button type="submit" class="btn btn-gold btn-lg px-5">
+              <i class="bi bi-check2-circle me-2"></i>Submit Application
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. FREQUENTLY ASKED QUESTIONS (FAQs) (#faqs)
+       ========================================================================= -->
+  <section id="faqs" class="py-5 bg-slate">
+    <div class="container py-2">
+      <div class="text-center mx-auto mb-5" style="max-width: 680px;">
+        <span class="section-kicker">Got Questions?</span>
+        <h2 class="fw-bold text-navy">Frequently Asked Questions</h2>
+        <div class="section-divider mx-auto mb-3"></div>
+        <p class="text-muted">
+          Find quick answers to the most common queries regarding 2026–2027 admissions, courses, eligibility, and fees.
+        </p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="accordion accordion-university" id="admissionFaqAccordion">
+            <!-- FAQ 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                  1. How can I apply for admission?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#admissionFaqAccordion">
+                <div class="accordion-body text-muted">
+                  You can apply directly through our <a href="#apply" class="fw-bold text-royal">Online Application Form</a> on this website. Select your preferred course, fill in your personal and academic information, upload scanned copies of your marksheets and ID proof, and submit the form to receive your unique Application Reference Number.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  2. What courses are available?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#admissionFaqAccordion">
+                <div class="accordion-body text-muted">
+                  For the 2026–2027 academic session, Aurelia Global University offers 7 flagship programs: <strong>B.Tech in Computer Science Engineering</strong>, <strong>B.Tech in Artificial Intelligence &amp; Machine Learning</strong>, <strong>B.Tech in Electronics &amp; Communication Engineering</strong>, <strong>BBA</strong>, <strong>MBA</strong>, <strong>BCA</strong>, and <strong>MCA</strong>.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  3. What are the eligibility requirements?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#admissionFaqAccordion">
+                <div class="accordion-body text-muted">
+                  For <strong>B.Tech</strong> programs, candidates must have passed 10+2 with Physics, Chemistry, and Mathematics with at least 60% marks along with JEE Main or AGU-CET scores. For <strong>BBA &amp; BCA</strong>, 50% aggregate in 10+2 is required. For <strong>MBA &amp; MCA</strong>, a recognized Bachelor’s degree with a minimum of 50% marks is mandatory.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  4. What is the fee structure?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#admissionFaqAccordion">
+                <div class="accordion-body text-muted">
+                  Annual total fees range from <strong>₹1,05,000 for BCA</strong> and <strong>₹1,10,000 for BBA</strong> to <strong>₹1,85,000 – ₹2,10,000 for B.Tech</strong> specializations and <strong>₹2,15,000 for MBA</strong>. Please refer to our <a href="#fees" class="fw-bold text-royal">Fee Structure Table</a> for an itemized breakdown. Merit scholarships up to 50% are also available.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                  5. Can I apply online?
+                </button>
+              </h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#admissionFaqAccordion">
+                <div class="accordion-body text-muted">
+                  Yes! The entire admission process—from registration and document upload to entrance slot booking and fee payment—is 100% online and mobile-friendly.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                  6. Which documents are required?
+                </button>
+              </h2>
+              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#admissionFaqAccordion">
+                <div class="accordion-body text-muted">
+                  Applicants must upload scanned copies of their Class 10th Marksheet, Class 12th Marksheet, Graduation Marksheets (for PG applicants), valid Government Photo ID (Aadhaar/Passport), passport-size photograph, and relevant Entrance Exam Scorecard.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                  7. How can I check my admission status?
+                </button>
+              </h2>
+              <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#admissionFaqAccordion">
+                <div class="accordion-body text-muted">
+                  Once you submit your online application, you receive a unique Application Reference Number (e.g., <code>AGU-2026-XXXXX</code>). Click the <strong>"Track Application Status"</strong> button in the top bar or <a href="#" class="fw-bold text-royal" data-bs-toggle="modal" data-bs-target="#statusTrackerModal">open the Status Tracker here</a> to view real-time verification progress.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. CONTACT INFORMATION & CAMPUS MAP (#contact)
+       ========================================================================= -->
+  <section id="contact" class="py-5 bg-white">
+    <div class="container py-2">
+      <div class="text-center mx-auto mb-5" style="max-width: 680px;">
+        <span class="section-kicker">Get in Touch</span>
+        <h2 class="fw-bold text-navy">Admissions Office &amp; Campus Location</h2>
+        <div class="section-divider mx-auto mb-3"></div>
+        <p class="text-muted">
+          Have questions about scholarships, hostel facilities, or campus visits? Our dedicated admissions counsellors are happy to assist.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-5">
+          <div class="p-4 rounded-4 bg-navy text-white h-100 d-flex flex-column justify-content-between shadow">
+            <div>
+              <h4 class="font-serif fw-bold text-gold mb-3">Aurelia Global University</h4>
+              <p class="small text-light opacity-85 mb-4">
+                Directorate of Admissions &amp; International Relations
+              </p>
+
+              <div class="d-flex gap-3 mb-3">
+                <i class="bi bi-geo-alt-fill text-gold fs-5"></i>
+                <div class="small">
+                  <div class="fw-bold">University Campus Address</div>
+                  <span class="text-light opacity-85">Aurelia Knowledge Park, NH-16, Mangalagiri–Vijayawada Highway, Vijayawada, Andhra Pradesh 522503, India</span>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3 mb-3">
+                <i class="bi bi-telephone-fill text-gold fs-5"></i>
+                <div class="small">
+                  <div class="fw-bold">Admission Enquiry Helpline</div>
+                  <span class="text-light opacity-85">+91 866 249 0100 / 1800-425-9900 (Toll-Free)</span>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3 mb-3">
+                <i class="bi bi-envelope-fill text-gold fs-5"></i>
+                <div class="small">
+                  <div class="fw-bold">Official Admissions Email</div>
+                  <span class="text-light opacity-85">admissions@aureliaglobal.edu.in</span>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3 mb-4">
+                <i class="bi bi-clock-fill text-gold fs-5"></i>
+                <div class="small">
+                  <div class="fw-bold">Counselling Desk Hours</div>
+                  <span class="text-light opacity-85">Monday – Saturday: 09:00 AM – 06:00 PM IST</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="pt-3 border-top border-secondary">
+              <div class="small fw-bold text-gold mb-2">Connect With Us</div>
+              <div class="d-flex gap-2">
+                <a href="#contact" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px;" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#contact" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px;" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#contact" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px;" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                <a href="#contact" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px;" aria-label="Twitter X"><i class="bi bi-twitter-x"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Embedded Google Maps Location -->
+        <div class="col-lg-7">
+          <div class="rounded-4 overflow-hidden border shadow-sm h-100" style="min-height: 360px;">
+            <iframe
+              title="Aurelia Global University Location Map"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=80.5800%2C16.4700%2C80.6800%2C16.5400&amp;layer=mapnik&amp;marker=16.5062%2C80.6480"
+              class="w-100 h-100 border-0"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. PROFESSIONAL UNIVERSITY FOOTER
+       ========================================================================= -->
+  <footer class="footer-university pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4 pb-4 border-bottom border-secondary">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2.5 mb-3">
+            <div class="crest-badge">
+              <i class="bi bi-shield-fill-check fs-5"></i>
+            </div>
+            <div>
+              <div class="font-serif fw-bold fs-5 text-white">Aurelia Global University</div>
+              <small class="text-gold">Excellence &bull; Innovation &bull; Leadership</small>
+            </div>
+          </div>
+          <p class="small opacity-75 mb-3">
+            Empowering students since 1998 with transformative education, cutting-edge laboratories, and industry-integrated degrees recognized globally.
+          </p>
+          <div class="d-flex gap-2 flex-wrap">
+            <span class="badge bg-navy-mid border border-secondary text-gold">NAAC A++</span>
+            <span class="badge bg-navy-mid border border-secondary text-white">UGC Recognized</span>
+            <span class="badge bg-navy-mid border border-secondary text-white">AICTE Approved</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="fw-bold text-white mb-3">Quick Links</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Courses Offered</a></li>
+            <li><a href="#eligibility">Eligibility Criteria</a></li>
+            <li><a href="#fees">Fee Structure</a></li>
+            <li><a href="#dates">Important Dates</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <h6 class="fw-bold text-white mb-3">Popular Programs</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="#courses">B.Tech Computer Science</a></li>
+            <li><a href="#courses">B.Tech AI &amp; Machine Learning</a></li>
+            <li><a href="#courses">B.Tech Electronics &amp; Comm.</a></li>
+            <li><a href="#courses">MBA &amp; BBA Management</a></li>
+            <li><a href="#courses">MCA &amp; BCA Applications</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h6 class="fw-bold text-white mb-3">Admissions Support</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="#apply">Online Application Form</a></li>
+            <li><a href="#process">8-Step Admission Guide</a></li>
+            <li><a href="#faqs">Admission FAQs</a></li>
+            <li><a href="#" data-bs-toggle="modal" data-bs-target="#statusTrackerModal">Check Application Status</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-3 d-flex flex-wrap justify-content-between align-items-center small opacity-75 gap-2">
+        <div>&copy; 2026 <strong>Aurelia Global University</strong>. All Rights Reserved.</div>
+        <div>Admissions Portal 2026–2027 &bull; Privacy Policy &bull; Anti-Ragging Policy</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODALS (Course Syllabus Details, Submission Confirmation, Status Tracker)
+       ========================================================================= -->
+
+  <!-- Course Syllabus & Details Modal -->
+  <div class="modal fade" id="courseDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4 border-0 shadow-lg">
+        <div class="modal-header bg-navy text-white rounded-top-4">
+          <h5 id="courseModalTitle" class="modal-title font-serif fw-bold text-gold">Program Details</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div id="courseModalBody" class="modal-body p-4"></div>
+        <div class="modal-footer border-0 pt-0 px-4 pb-4">
+          <button type="button" class="btn btn-outline-secondary rounded-3" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="courseModalApplyBtn" class="btn btn-gold">Apply for this Course</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Confirmation Modal -->
+  <div class="modal fade" id="applicationSuccessModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow-lg text-center p-3">
+        <div class="modal-body">
+          <div class="mx-auto mb-3 rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center" style="width: 68px; height: 68px;">
+            <i class="bi bi-patch-check-fill fs-1"></i>
+          </div>
+          <h4 class="font-serif fw-bold text-navy mb-1">Registration Confirmed!</h4>
+          <p class="text-muted small mb-3">
+            Your admission application for the <strong>2026–2027</strong> academic session has been successfully received.
+          </p>
+          <div class="p-3 rounded-4 bg-slate border mb-3">
+            <div class="small text-muted">Application Reference Number</div>
+            <div id="modalRefId" class="fs-4 fw-bold text-navy my-1">AGU-2026-84920</div>
+            <div id="modalApplicantSummary" class="small text-royal fw-semibold"></div>
+          </div>
+          <p class="small text-muted mb-4">
+            Save this Reference Number to track your document verification and counselling schedule anytime.
+          </p>
+          <div class="d-flex gap-2 justify-content-center">
+            <button type="button" class="btn btn-outline-secondary rounded-3" onclick="window.print()">
+              <i class="bi bi-printer me-1"></i> Print Receipt
+            </button>
+            <button type="button" class="btn btn-gold px-4" data-bs-dismiss="modal">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Check Application Status Modal -->
+  <div class="modal fade" id="statusTrackerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow-lg">
+        <div class="modal-header bg-navy text-white rounded-top-4">
+          <h5 class="modal-title font-serif fw-bold text-gold"><i class="bi bi-search me-2"></i>Check Admission Status</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p class="small text-muted mb-3">
+            Enter your Application Reference ID (e.g., <code>AGU-2026-10482</code> or the ID generated after submitting the form).
+          </p>
+          <div class="input-group mb-3">
+            <input type="text" id="statusInputId" class="form-control text-uppercase" placeholder="AGU-2026-XXXXX" />
+            <button class="btn btn-gold" type="button" onclick="checkApplicationStatus()">Check Status</button>
+          </div>
+          <div id="statusResultBox"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    /* ==========================================================================
+       1. COURSES DATASET (ALL 7 REQUIRED COURSES)
+       ========================================================================== */
+    const universityCourses = [
+      {
+        id: "btech-cse",
+        name: "B.Tech – Computer Science Engineering",
+        level: "UG",
+        category: "Tech",
+        duration: "4 Years (8 Semesters)",
+        annualFee: "₹2,00,000 / yr",
+        eligibility: "10+2 (PCM) with min. 60% marks + JEE Main / AGU-CET",
+        description: "Comprehensive program covering Data Structures, Cloud Computing, Full-Stack Systems, Cybersecurity, and Distributed Architecture.",
+        highlights: ["NVIDIA & AWS Cloud Academy Labs", "6-Month Industry Capstone Internship", "Specializations in Cybersecurity & Cloud Systems"]
+      },
+      {
+        id: "btech-aiml",
+        name: "B.Tech – Artificial Intelligence and Machine Learning",
+        level: "UG",
+        category: "Tech",
+        duration: "4 Years (8 Semesters)",
+        annualFee: "₹2,10,000 / yr",
+        eligibility: "10+2 (PCM) with min. 60% marks + JEE Main / AGU-CET",
+        description: "Focused on Deep Learning, Generative AI, Natural Language Processing, Computer Vision, and Autonomous Robotics engineering.",
+        highlights: ["Dedicated GPU Supercomputing Cluster", "AI Research Publications Mentorship", "Industry Projects with Top Tech Partners"]
+      },
+      {
+        id: "btech-ece",
+        name: "B.Tech – Electronics and Communication Engineering",
+        level: "UG",
+        category: "Tech",
+        duration: "4 Years (8 Semesters)",
+        annualFee: "₹1,85,000 / yr",
+        eligibility: "10+2 (PCM) with min. 60% marks + JEE Main / AGU-CET",
+        description: "In-depth training in VLSI Chip Design, Embedded Systems, IoT Networks, 5G/6G Wireless Communications, and Signal Processing.",
+        highlights: ["VLSI & Semiconductor Design Lab", "IoT & Embedded Robotics Makerspace", "Core Hardware & Telecom Placement Cell"]
+      },
+      {
+        id: "bba",
+        name: "BBA – Bachelor of Business Administration",
+        level: "UG",
+        category: "Management",
+        duration: "3 Years (6 Semesters)",
+        annualFee: "₹1,10,000 / yr",
+        eligibility: "10+2 in any stream with min. 50% aggregate marks",
+        description: "Builds strong foundations in Corporate Finance, Digital Marketing, Business Analytics, Entrepreneurship, and Global Supply Chain.",
+        highlights: ["Startup Incubation Seed Grants", "Live Corporate Case Study Labs", "Summer Business Immersion Program"]
+      },
+      {
+        id: "mba",
+        name: "MBA – Master of Business Administration",
+        level: "PG",
+        category: "Management",
+        duration: "2 Years (4 Semesters)",
+        annualFee: "₹2,15,000 / yr",
+        eligibility: "Bachelor's Degree (min. 50%) + CAT / MAT / XAT / AGU-MAT",
+        description: "Executive leadership program offering dual specializations in Finance, Marketing, Business Analytics, HR, and Operations Management.",
+        highlights: ["Bloomberg Finance Trading Terminal", "CXO Leadership Conclaves & Mentorship", "100% Summer & Final Placement Assistance"]
+      },
+      {
+        id: "bca",
+        name: "BCA – Bachelor of Computer Applications",
+        level: "UG",
+        category: "Tech",
+        duration: "3 Years (6 Semesters)",
+        annualFee: "₹1,05,000 / yr",
+        eligibility: "10+2 in any stream with min. 50% aggregate marks",
+        description: "Practical software development degree emphasizing Web & Mobile App Development, Python, Database Systems, and UI/UX Design.",
+        highlights: ["Hackathons & Open-Source Bootcamps", "Industry-Certified Cloud & DevOps Modules", "Direct Pathway to MCA & Software Roles"]
+      },
+      {
+        id: "mca",
+        name: "MCA – Master of Computer Applications",
+        level: "PG",
+        category: "Tech",
+        duration: "2 Years (4 Semesters)",
+        annualFee: "₹1,45,000 / yr",
+        eligibility: "Bachelor's Degree (min. 50%) with Mathematics at 10+2 or UG",
+        description: "Advanced postgraduate computing degree focused on Enterprise Software Architecture, Data Science, DevOps, and Agile Engineering.",
+        highlights: ["Full-Stack & Microservices Specialization", "1-Semester Paid Industry Internship", "Dedicated IT Product Recruitment Drives"]
+      }
+    ];
+
+    /* ==========================================================================
+       2. RENDER COURSES & LIVE SEARCH/FILTER
+       ========================================================================== */
+    let currentCourseFilter = "all";
+    let currentCourseSearch = "";
+
+    function renderCourses() {
+      const grid = document.getElementById("coursesGrid");
+      const filtered = universityCourses.filter((course) => {
+        const matchesFilter =
+          currentCourseFilter === "all" ||
+          course.level === currentCourseFilter ||
+          course.category === currentCourseFilter;
+
+        const q = currentCourseSearch.toLowerCase();
+        const matchesSearch =
+          !q ||
+          course.name.toLowerCase().includes(q) ||
+          course.description.toLowerCase().includes(q) ||
+          course.level.toLowerCase().includes(q);
+
+        return matchesFilter && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-12">
+            <div class="p-5 bg-white rounded-4 border text-center">
+              <i class="bi bi-search fs-2 text-muted mb-2 d-block"></i>
+              <h5 class="fw-bold text-navy">No matching courses found</h5>
+              <p class="text-muted small mb-0">Try adjusting your search keywords or reset the category filter.</p>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered
+        .map(
+          (c) => `
+          <div class="col-md-6 col-lg-4">
+            <div class="course-card">
+              <div class="course-card-top">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge bg-warning text-dark fw-bold">${c.level} Program</span>
+                  <span class="small text-light opacity-85"><i class="bi bi-clock me-1"></i>${c.duration}</span>
+                </div>
+                <h5 class="font-serif fw-bold mb-0 lh-snug">${c.name}</h5>
+              </div>
+
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <p class="small text-muted mb-3">${c.description}</p>
+
+                <div class="p-2.5 px-3 rounded-3 bg-slate border mb-3 small">
+                  <div class="text-muted" style="font-size: 0.74rem;">ELIGIBILITY</div>
+                  <div class="fw-semibold text-navy">${c.eligibility}</div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3 pt-2 border-top small">
+                  <span class="text-muted">Annual Total Fee:</span>
+                  <span class="fw-bold text-gold-dark fs-6">${c.annualFee}</span>
+                </div>
+
+                <div class="mt-auto d-flex gap-2">
+                  <button class="btn btn-gold btn-sm flex-grow-1" onclick="selectCourseAndApply('${c.name}')">
+                    Apply Now <i class="bi bi-arrow-right ms-1"></i>
+                  </button>
+                  <button class="btn btn-outline-secondary btn-sm rounded-3" onclick="openCourseModal('${c.id}')" title="Program Details">
+                    Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+        )
+        .join("");
+    }
+
+    // Filter Buttons Event Listeners
+    document.querySelectorAll("#courseFilterGroup .course-filter-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#courseFilterGroup .course-filter-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentCourseFilter = btn.dataset.filter;
+        renderCourses();
+      });
+    });
+
+    // Live Search Input Listener
+    document.getElementById("courseSearchInput").addEventListener("input", (e) => {
+      currentCourseSearch = e.target.value.trim();
+      renderCourses();
+    });
+
+    // Pre-select Course in Online Application Form and Scroll Smoothly
+    function selectCourseAndApply(courseName) {
+      const selectEl = document.getElementById("appCourseSelect");
+      selectEl.value = courseName;
+      selectEl.classList.remove("is-invalid");
+      selectEl.classList.add("is-valid");
+
+      const applySection = document.getElementById("apply");
+      applySection.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        document.getElementById("appFullName").focus();
+      }, 650);
+    }
+
+    // Course Detail Modal
+    function openCourseModal(courseId) {
+      const c = universityCourses.find((item) => item.id === courseId);
+      if (!c) return;
+
+      document.getElementById("courseModalTitle").textContent = c.name;
+      document.getElementById("courseModalBody").innerHTML = `
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <span class="badge bg-navy text-gold px-3 py-2">${c.level} Degree</span>
+          <span class="badge bg-light text-dark border px-3 py-2"><i class="bi bi-clock me-1"></i>${c.duration}</span>
+          <span class="badge bg-warning-subtle text-dark border border-warning px-3 py-2">Annual Fee: ${c.annualFee}</span>
+        </div>
+        <p class="text-muted">${c.description}</p>
+        <div class="p-3 rounded-3 bg-slate border mb-3">
+          <div class="fw-bold text-navy small mb-1">Eligibility Criteria:</div>
+          <div class="small text-muted">${c.eligibility}</div>
+        </div>
+        <h6 class="fw-bold text-navy">Key Program Highlights:</h6>
+        <ul class="small text-muted mb-0">
+          ${c.highlights.map((h) => `<li class="mb-1">${h}</li>`).join("")}
+        </ul>
+      `;
+
+      const modalApplyBtn = document.getElementById("courseModalApplyBtn");
+      modalApplyBtn.onclick = () => {
+        bootstrap.Modal.getInstance(document.getElementById("courseDetailModal")).hide();
+        selectCourseAndApply(c.name);
+      };
+
+      new bootstrap.Modal(document.getElementById("courseDetailModal")).show();
+    }
+
+    /* ==========================================================================
+       3. ONLINE APPLICATION FORM VALIDATION & SUBMISSION
+       ========================================================================== */
+    const submittedApplications = {
+      "AGU-2026-10482": {
+        name: "Rohan Deshmukh",
+        course: "B.Tech – Computer Science Engineering",
+        date: "Jan 18, 2026",
+        status: "Documents Verified • Eligible for Counselling"
+      }
+    };
+
+    // File upload filename preview
+    document.getElementById("appDocuments").addEventListener("change", (e) => {
+      const files = Array.from(e.target.files);
+      const preview = document.getElementById("uploadedFilePreview");
+      if (files.length > 0) {
+        preview.textContent = `Selected (${files.length}): ${files.map((f) => f.name).join(", ")}`;
+      } else {
+        preview.textContent = "PDF, JPG, or PNG (Max 5MB)";
+      }
+    });
+
+    const applicationForm = document.getElementById("admissionApplicationForm");
+
+    applicationForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // Custom validation checks
+      const fullName = document.getElementById("appFullName");
+      const mobile = document.getElementById("appMobile");
+      const marks10 = document.getElementById("app10thMarks");
+      const marks12 = document.getElementById("app12thMarks");
+
+      if (fullName.value.trim().length < 3) {
+        fullName.setCustomValidity("Invalid");
+      } else {
+        fullName.setCustomValidity("");
+      }
+
+      if (!/^[6-9]\d{9}$/.test(mobile.value.trim())) {
+        mobile.setCustomValidity("Invalid");
+      } else {
+        mobile.setCustomValidity("");
+      }
+
+      const m10Val = parseFloat(marks10.value);
+      marks10.setCustomValidity(isNaN(m10Val) || m10Val < 35 || m10Val > 100 ? "Invalid" : "");
+
+      const m12Val = parseFloat(marks12.value);
+      marks12.setCustomValidity(isNaN(m12Val) || m12Val < 35 || m12Val > 100 ? "Invalid" : "");
+
+      if (!applicationForm.checkValidity()) {
+        applicationForm.classList.add("was-validated");
+        const firstInvalid = applicationForm.querySelector(":invalid");
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      // Generate Unique Application Reference Number
+      const randomDigits = Math.floor(10000 + Math.random() * 90000);
+      const refId = `AGU-2026-${randomDigits}`;
+      const applicantName = fullName.value.trim();
+      const selectedCourse = document.getElementById("appCourseSelect").value;
+
+      // Save to session tracker dictionary
+      submittedApplications[refId] = {
+        name: applicantName,
+        course: selectedCourse,
+        date: new Date().toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }),
+        status: "Application Submitted • Under Document Screening"
+      };
+
+      // Update Success Banner & Modal
+      document.getElementById("bannerApplicantName").textContent = applicantName;
+      document.getElementById("bannerSelectedCourse").textContent = selectedCourse;
+      document.getElementById("bannerAppRefId").textContent = refId;
+      document.getElementById("applicationSuccessBanner").classList.remove("d-none");
+
+      document.getElementById("modalRefId").textContent = refId;
+      document.getElementById("modalApplicantSummary").textContent = `${applicantName} • ${selectedCourse}`;
+      document.getElementById("statusInputId").value = refId;
+
+      new bootstrap.Modal(document.getElementById("applicationSuccessModal")).show();
+      applicationForm.classList.remove("was-validated");
+    });
+
+    function resetApplicationForm() {
+      applicationForm.classList.remove("was-validated");
+      document.getElementById("uploadedFilePreview").textContent = "PDF, JPG, or PNG (Max 5MB)";
+    }
+
+    /* ==========================================================================
+       4. APPLICATION STATUS TRACKER
+       ========================================================================== */
+    function checkApplicationStatus() {
+      const inputId = document.getElementById("statusInputId").value.trim().toUpperCase();
+      const resultBox = document.getElementById("statusResultBox");
+
+      if (!inputId) {
+        resultBox.innerHTML = `<div class="alert alert-warning small mb-0">Please enter an Application Reference ID.</div>`;
+        return;
+      }
+
+      const record = submittedApplications[inputId];
+      if (record) {
+        resultBox.innerHTML = `
+          <div class="p-3 rounded-3 bg-success-subtle border border-success small">
+            <div class="fw-bold text-success mb-1"><i class="bi bi-check-circle-fill me-1"></i>Application Found (${inputId})</div>
+            <div><strong>Applicant:</strong> ${record.name}</div>
+            <div><strong>Program:</strong> ${record.course}</div>
+            <div><strong>Submitted On:</strong> ${record.date}</div>
+            <div class="mt-2"><span class="badge bg-navy text-gold">${record.status}</span></div>
+          </div>
+        `;
+      } else {
+        resultBox.innerHTML = `
+          <div class="alert alert-danger small mb-0">
+            No record found for <strong>${inputId}</strong>. Please submit the Online Application Form first or try sample ID <code>AGU-2026-10482</code>.
+          </div>
+        `;
+      }
+    }
+
+    /* ==========================================================================
+       5. NAVBAR ACTIVE LINK HIGHLIGHT & INITIALIZATION
+       ========================================================================== */
+    window.addEventListener("DOMContentLoaded", () => {
+      renderCourses();
+
+      // Close mobile navbar after clicking a link
+      document.querySelectorAll("#universityNavbar .nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          const navCollapse = document.getElementById("universityNavbar");
+          if (navCollapse.classList.contains("show")) {
+            bootstrap.Collapse.getInstance(navCollapse).hide();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
